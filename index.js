@@ -69,7 +69,7 @@ AssetsWebpackPlugin.prototype = {
         }
       } else {
         chunks = Object.keys(stats.assetsByChunkName)
-        chunks.push('') // push "unamed" chunk
+        chunks.push('') // push "unnamed" chunk
       }
 
       var output = chunks.reduce(function (chunkMap, chunkName) {
