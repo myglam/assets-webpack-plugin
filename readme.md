@@ -254,7 +254,7 @@ new AssetsPlugin({fileTypes: ['js', 'jpg']})
 
 Optional. `false` by default.
 
-When set true, includes the assets with no chunk ("unnamed chunk") in the assets file.
+When set to `true`, includes the assets with no chunk ("unnamed chunk") in the assets file.
 
 ```js
 new AssetsPlugin({includeFilesWithoutChunk: true})
