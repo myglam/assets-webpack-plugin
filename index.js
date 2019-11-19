@@ -63,6 +63,9 @@ AssetsWebpackPlugin.prototype = {
 
       if (self.options.entrypoints) {
         chunks = Object.keys(stats.entrypoints)
+        if (self.options.includeFilesWithoutChunk) {
+          chunks.push('') // push "unamed" chunk
+        }
       } else {
         chunks = Object.keys(stats.assetsByChunkName)
         chunks.push('') // push "unamed" chunk
@@ -72,7 +75,7 @@ AssetsWebpackPlugin.prototype = {
         var assets
 
         if (self.options.entrypoints) {
-          assets = stats.entrypoints[chunkName].assets
+          assets = (self.options.includeFilesWithoutChunk && chunkName) ? stats.entrypoints[chunkName].assets : stats.assets
         } else {
           assets = chunkName ? stats.assetsByChunkName[chunkName] : stats.assets
         }
