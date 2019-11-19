@@ -19,6 +19,7 @@ function AssetsWebpackPlugin (options) {
     useCompilerPath: false,
     fileTypes: ['js', 'css'],
     includeAllFileTypes: true,
+    includeFilesWithoutChunk: false,
     keepInMemory: false,
     integrity: false
   }, options)

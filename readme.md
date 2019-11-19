@@ -164,7 +164,7 @@ from the assets json output, and order of import is important.
 
 ```js
 new AssetsPlugin({manifestFirst: true})
-``` 
+```
 
 #### `path`
 
@@ -248,6 +248,16 @@ When set and `includeAllFileTypes` is set false, only assets matching these type
 
 ```js
 new AssetsPlugin({fileTypes: ['js', 'jpg']})
+```
+
+#### `includeFilesWithoutChunk`
+
+Optional. `false` by default.
+
+When set true, includes the assets with no chunk ("unnamed chunk") in the assets file.
+
+```js
+new AssetsPlugin({includeFilesWithoutChunk: true})
 ```
 
 #### `keepInMemory`
