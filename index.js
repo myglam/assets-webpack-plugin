@@ -76,7 +76,7 @@ AssetsWebpackPlugin.prototype = {
         var assets
 
         if (self.options.entrypoints) {
-          assets = (self.options.includeFilesWithoutChunk && chunkName) ? stats.entrypoints[chunkName].assets : stats.assets
+          assets = chunkName ? stats.entrypoints[chunkName].assets : stats.assets
         } else {
           assets = chunkName ? stats.assetsByChunkName[chunkName] : stats.assets
         }
